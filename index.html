@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake Vote Detector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <h1>Fake Vote Detector</h1>
+      <p>Upload or paste vote data to identify suspicious voting activity.</p>
+      <p><a href="ui.html" class="badge badge-success">View UI Guide</a></p>
+    </header>
+
+    <section class="card input-card">
+      <h2>Step 1: Enter vote data</h2>
+      <p>Use the sample format below, or paste your own CSV content. This project relies on device fingerprinting as the primary vote identity.</p>
+
+      <textarea id="vote-data" rows="10">
+fingerprint,voter_id,candidate,ip_address,timestamp
+fp-01,1001,Alpha,192.168.1.10,2026-04-10T08:05:12Z
+fp-02,1002,Beta,203.0.113.5,2026-04-10T08:07:40Z
+fp-01,1003,Alpha,192.168.1.10,2026-04-10T08:09:18Z
+fp-03,1004,Alpha,192.168.1.10,2026-04-10T08:10:05Z
+fp-04,1005,Beta,198.51.100.23,2026-04-10T08:11:28Z
+fp-02,1006,Alpha,203.0.113.5,2026-04-10T08:11:45Z
+      </textarea>
+
+      <div class="controls">
+        <button id="run-analysis">Analyze Votes</button>
+        <button id="load-sample">Load Sample Data</button>
+      </div>
+    </section>
+
+    <section class="card results-card">
+      <h2>Analysis Results</h2>
+      <div id="results" class="results-empty">
+        <p>No analysis run yet. Click <strong>Analyze Votes</strong> to detect suspicious patterns.</p>
+      </div>
+    </section>
+
+    <section class="card info-card">
+      <h2>What this detector checks</h2>
+      <ul>
+        <li>Duplicate fingerprints (same device voting more than once)</li>
+        <li>Fingerprint used with different voter IDs</li>
+        <li>Multiple votes from the same IP address</li>
+        <li>Multiple votes at the same timestamp</li>
+      </ul>
+      <p>Paste data in CSV format with headers: <code>fingerprint,voter_id,candidate,ip_address,timestamp</code>.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

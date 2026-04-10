@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake Vote Detector UI Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <h1>Fake Vote Detector UI Guide</h1>
+      <p>Learn how the app interface works and how to use the fingerprint-based detection features.</p>
+    </header>
+
+    <section class="card info-card">
+      <h2>App UI Overview</h2>
+      <p>The application has three main sections:</p>
+      <ul>
+        <li><strong>Input panel</strong> — paste or enter vote data in CSV format.</li>
+        <li><strong>Control buttons</strong> — analyze the data or load the sample dataset.</li>
+        <li><strong>Results area</strong> — view suspicious activity detected by the analyzer.</li>
+      </ul>
+    </section>
+
+    <section class="card info-card">
+      <h2>Fingerprint-based detection</h2>
+      <p>This project uses a <code>fingerprint</code> field to identify the voting device or browser. That means the app can detect fake votes even when the <code>voter_id</code> field is changed.</p>
+      <ul>
+        <li>Duplicate fingerprints indicate repeated voting from the same device.</li>
+        <li>Different voter IDs with the same fingerprint indicate possible identity fraud.</li>
+        <li>Multiple records from the same IP or timestamp can indicate automated voting.</li>
+      </ul>
+    </section>
+
+    <section class="card info-card">
+      <h2>How to open the app</h2>
+      <p>Open <code>index.html</code> in your browser to use the main vote detection interface.</p>
+      <p>Use <code>ui.html</code> to view this UI guide and learn how the data fields are interpreted.</p>
+      <p><a href="index.html" class="badge badge-success">Open Main App</a></p>
+    </section>
+  </div>
+</body>
+</html>

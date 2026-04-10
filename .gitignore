@@ -1,0 +1,13 @@
+# Ignore operating system files
+Thumbs.db
+.DS_Store
+
+# Ignore editor folders
+.vscode/
+
+# Ignore node modules if any
+node_modules/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
