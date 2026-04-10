@@ -14,13 +14,15 @@ This app is designed to help catch fake votes when voter IDs are unreliable by f
 
 ## How to run
 
-1. Open `index.html` in your browser.
-2. Paste vote data in CSV format or click **Load Sample Data**.
-3. Click **Analyze Votes**.
+1. Open `index.html` in your browser to view the UI guide.
+2. Open `app.html` in your browser to use the main vote analyzer.
+3. Paste vote data in CSV format or click **Load Sample Data** in the app.
+4. Click **Analyze Votes**.
 
 ## UI guide
 
-- Open `ui.html` to see the interface guide and understand how fingerprint detection works.
+- `index.html` is now the UI guide landing page.
+- `app.html` is the main vote detection interface.
 
 ## CSV format
 
